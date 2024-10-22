@@ -1,3 +1,7 @@
+# My Website
+
+You can view the live version here: [Live Website](https://JohnDoe.github.io/my-website/)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
