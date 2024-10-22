@@ -1,0 +1,98 @@
+.section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section__header {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.portfolio__grid {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.portfolio__card {
+    position: relative;
+    isolation: isolate;
+}
+  
+.portfolio__card::after {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-family: var(--header-font);
+    color: var(--white);
+}
+  
+.portfolio__card:nth-child(1)::after {
+    content: "Pre-Wedding";
+}
+  
+.portfolio__card:nth-child(2)::after {
+    content: "Engagement";
+}
+  
+.portfolio__card:nth-child(3)::after {
+    content: "Wedding";
+}
+  
+.portfolio__card:nth-child(4)::after {
+    content: "Birthday";
+}
+  
+.portfolio__card:nth-child(5)::after {
+    content: "Family and Baby";
+}
+  
+.portfolio__card:nth-child(6)::after {
+    content: "The Cinematic Hub";
+}
+
+.portfolio__card:hover .portfolio__content {
+    opacity: 1;
+}
+
+.portfolio__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+@media (width > 540px) {
+    .portfolio__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width > 768px) {
+
+    .portfolio__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (width > 1024px) {
+
+    .portfolio__grid {
+      gap: 2rem;
+    }
+}

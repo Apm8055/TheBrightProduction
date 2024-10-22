@@ -1,0 +1,38 @@
+.bgcl {
+  min-height: 100vh !important;
+  background: linear-gradient(45deg, #AF8F6F, #74512D, #543310, #AF8F6F);
+  background-size: 500% 300%;
+  animation: color 12s ease-in-out infinite;
+}
+
+
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+#abcd {
+  text-decoration: underline;
+  letter-spacing: 2px;
+  font-size: 3rem;
+  color: #F2EAD3;
+
+
+  padding-top: 2rem;
+  /* Adds spacing above the title */
+}
+
+@media (max-width: 720px) {
+  #abcd {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,46 @@
+.section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section__header {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.gallery__grid {
+    margin-block: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+  
+.gallery__grid img {
+    transition: 0.3s;
+}
+  
+.gallery__grid:hover img:not(:hover) {
+    opacity: 0.5;
+}
+
+.gallery__btn {
+    text-align: center;
+}
+
+@media (width > 540px){
+    .gallery__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (width > 768px){
+    .gallery__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+

@@ -1,0 +1,131 @@
+.header {
+    min-height: 600px;
+    background-image: radial-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9)),
+      url("https://ik.imagekit.io/apm2002/Photos/image-1.jpg?updatedAt=1723875062112");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: change 20s infinite ease-in;
+}
+
+.nav__header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: var(--text-dark);
+}
+
+.nav__logo img {
+    max-width: 70px;
+}
+
+.nav__menu__btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.nav__links {
+    position: absolute;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--text-dark);
+    transform: translateY(-100%);
+    transition: 0.5s;
+    list-style: none;  
+    z-index: -1;
+  
+}
+
+.nav__links.open {
+    transform: translateY(0);
+}
+  
+.nav__links .nav__logo {
+    display: none;
+}
+  
+.nav__links a {
+    padding-bottom: 5px;
+    font-weight: 500;
+    color: var(--white);
+}
+  
+.nav__links a:hover {
+    border-color: var(--white);
+}
+
+/* @keyframes change{
+    0%
+    {
+        background-image: url(https://ik.imagekit.io/apm2002/Photos/image-1.jpg?updatedAt=1723875062112);
+    }
+    18%
+    {
+        background-image: url(https://ik.imagekit.io/apm2002/Photos/image-1.jpg?updatedAt=1723875062112);
+    }
+    27%
+    {
+        background-image: url(https://ik.imagekit.io/apm2002/Photos/image-2.jpg?updatedAt=1723875062175);
+    }
+    45%
+    {
+        background-image: url(https://ik.imagekit.io/apm2002/Photos/image-2.jpg?updatedAt=1723875062175);
+    }
+    54%
+    {
+        background-image: url(https://ik.imagekit.io/apm2002/Photos/image-3.jpg?updatedAt=1723875061869);
+    }
+    72%
+    {
+        background-image: url(https://ik.imagekit.io/apm2002/Photos/image-3.jpg?updatedAt=1723875061869);
+    }
+    81%
+    {
+        background-image: url(https://ik.imagekit.io/apm2002/Photos/image-4.jpg?updatedAt=1723875061761);
+    }
+    100%
+    {
+        background-image: url(https://ik.imagekit.io/apm2002/Photos/image-4.jpg?updatedAt=1723875061761);
+    }
+} */
+
+@media (width > 768px){
+    .header {
+        min-height: 650px;
+    }
+
+    .nav__header {
+        display: none;
+    }
+
+    .nav__links {
+        padding: 0;
+        width: 100%;
+        position: static;
+        transform: none;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: transparent;
+    }
+    
+    .nav__links .nav__logo {
+        display: block;
+    }
+    
+    .nav__links .nav__logo img {
+        max-width: 150px;
+    }
+}
+
+@media (width > 1024px){
+    .header {
+        min-height: 700px;
+    }
+}
