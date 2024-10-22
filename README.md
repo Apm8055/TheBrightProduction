@@ -1,6 +1,6 @@
 # My Website
 
-You can view the live version here: [Live Website](https://JohnDoe.github.io/my-website/)
+You can view the live version here: [Live Website](https://thebrightproductiontbp.com/)
 
 # React + Vite
 
