@@ -11,6 +11,7 @@ import EngagementGallery from './Pages/Engagement/EngagementGallery';
 import VideoPage from './Pages/Video/VideoPage';
 import { useState } from 'react';
 import './App.css';
+import GalleryPage from './Pages/GalleryPage/GalleryPage';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token') || null);
@@ -27,6 +28,7 @@ function App() {
         <Route path="/wedding" element={<Wedding />} />
         <Route path="/engagement" element={<EngagementGallery />} />
         <Route path="/videos" element={<VideoPage/>} />
+        <Route path="/gallery" element={<GalleryPage/>} />
       </Routes>
     </Router>
   );

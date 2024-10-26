@@ -1,7 +1,7 @@
 import React from 'react';
-import './Gallery.css';
+import './GalleryComponent.css';
 
-const Gallery = () => {
+const GalleryComponent = () => {
   return (
     <section className="section__container gallery__container" id="Gallery">
       <h2 className="section__header">~ GALLERY ~</h2>
@@ -16,10 +16,10 @@ const Gallery = () => {
         <img src="https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%203.jpg?updatedAt=1723875063079" alt="gallery" />
       </div>
       <div className="gallery__btn">
-        <a href="Pages/gallery.html" target="_blank" rel="noopener noreferrer"><button className="btn">VIEW PHOTOS</button></a>
+        <a href="/gallery" target="_blank" rel="noopener noreferrer"><button className="btn">VIEW PHOTOS</button></a>
       </div>
     </section>
   );
 };
 
-export default Gallery;
+export default GalleryComponent;
