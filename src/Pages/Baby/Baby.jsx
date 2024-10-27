@@ -1,37 +1,148 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import { RowsPhotoAlbum } from 'react-photo-album';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
+import "react-photo-album/rows.css";
 import "../Pages.css";
 
-const photos = [
-    "Birthday%201.jpg",
-    "Birthday%202.jpg",
-    "Birthday%203.jpg",
-    "Birthday%204.jpg",
-    "Birthday%205.jpg",
-    "Birthday%206.jpg",
-    "Birthday%207.jpg",
-    "Birthday%208.jpg",
-    "Birthday%2017.jpg",
-    "Birthday%2018.jpg",
-    "Birthday%2019.jpg",
-    "Birthday%2020.jpg",
-    "Birthday%2021.jpg",
-    "Birthday%2022.jpg",
-    "Birthday%2023.jpg",
-    "Birthday%2024.jpg",
-    "Birthday%209.jpg",
-    "Birthday%2010.jpg",
-    "Birthday%2011.jpg",
-    "Birthday%2012.jpg",
-    "Birthday%2013.jpg",
-    "Birthday%2014.jpg",
-    "Birthday%2015.jpg",
-    "Birthday%2016.jpg",
-    "Birthday%2025.jpg"
+const images2 = [
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%201.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%202.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%203.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%204.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%205.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%206.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%207.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%208.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2017.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2018.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2019.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2020.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2021.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2022.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2023.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2024.jpg?updatedAt=1723875098921",
+        "width": 5760,
+        "height": 3840
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%209.jpg?updatedAt=1723875098921",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2010.jpg?updatedAt=1723875098921",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2011.jpg?updatedAt=1723875098921",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2012.jpg?updatedAt=1723875098921",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2013.jpg?updatedAt=1723875098921",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2014.jpg?updatedAt=1723875098921",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2015.jpg?updatedAt=1723875098921",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2016.jpg?updatedAt=1723875098921",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2025.jpg?updatedAt=1723875098921",
+        "width": 1440,
+        "height": 960
+    }
 ];
 
 const Baby = () => {
 
-    const [images, setImages] = useState([]);
+    const [images, setImages] = useState(images2);
+    const [isOpen, setIsOpen] = useState(false);
+    const [photoIndex, setPhotoIndex] = useState(0);
+
+    const openLightbox = (index) => {
+        setPhotoIndex(index);
+        setIsOpen(true);
+    };
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -40,8 +151,8 @@ const Baby = () => {
                     'https://enchanting-taiyaki-c89136.netlify.app/.netlify/functions/getImages?category=FamilynBaby'
                 );
                 const data = await response.json();
-                setImages(data);  // Store fetched images in the state
-                console.log(images);
+                console.log("Fetched Data: ", data);
+                setImages((prevImages) => [...prevImages, ...data]);   // Store fetched images in the state
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
@@ -52,46 +163,31 @@ const Baby = () => {
 
     return (
         <>
-        <div className='bgcl'>
-        <div className="container">
-            <h2 className="section__header" id="abcd">Family and Baby Photos</h2>
-            <div className="service__card">
-                <p>Click on the photos to start slide show.</p>
-            </div>
-            <div className="container-fluid">
-                <div className="row mt-4">
-                    {photos.map((image, index) => (
-                        <div key={index} className="item col-sm-3 col-md-3 col-3 mb-3 responsive">
-                            <a
-                                href={`https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/${image}?updatedAt=1723875098921`}
-                                className="fancybox"
-                                data-fancybox="gallery1"
-                            >
-                                <img
-                                    src={`https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/${image}?updatedAt=1723875098921`}
-                                    alt={`photo ${index + 1}`}
-                                    width="50%"
-                                />                          
-                            </a>                            
-                        </div>                          
-                    ))}                         
-
-
-                    {images.map((image, index) => (
-                        <div className="item col-sm-3 col-md-3 col-3 mb-3 responsive" key={index}>
-                            <a href={image.url} className="fancybox" data-fancybox="gallery1">
-                                <img src={image.url} alt={`Engagement ${index + 1}`} width="50%" />
-                            </a>
-                        </div>
-                    ))}
-
-
-
+            <div className='bgcl'>
+                <div className="container">
+                    <h2 className="section__header" id="abcd">Family and Baby Photos</h2>
+                    <div className="service__card">
+                        <p>Click on the photos to start slide show.</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+                <RowsPhotoAlbum
+                    photos={images}
+                    // targetRowHeight={150}
+                    // rowConstraints={{ singleRowMaxHeight: 250 }}
+                    onClick={({ index }) => {
+                        openLightbox(index);
+                    }}
+                />
+                {isOpen && (
+                    <Lightbox
+                        slides={images.map((img) => ({ src: img.src }))}
+                        index={photoIndex}
+                        open={isOpen}
+                        close={() => setIsOpen(false)}
+                    />
+                )}
 
-        </div>
+            </div>
         </>
     );
 };

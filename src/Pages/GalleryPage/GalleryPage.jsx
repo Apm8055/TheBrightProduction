@@ -3,8 +3,7 @@ import { RowsPhotoAlbum } from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import "react-photo-album/rows.css";
-
-
+import '../Pages.css';
 
 const images = [
   {
@@ -40,21 +39,6 @@ const GalleryPage = () => {
     setIsOpen(true);
   };
 
-  // let ans = []
-  // for(let i=0;i<images2.length;i++){
-  //   const img = new Image();
-  //   img.src = images2[i].src;
-  //   img.onload = () => {
-  //     ans.push({
-  //       src: images2[i].src,
-  //       width: img.width,
-  //       height: img.height
-  //     })
-  //   }
-  // }
-
-  // console.log(ans)
-
   return (
     <div className='bgcl'>
       <div className="container">
@@ -87,3 +71,19 @@ const GalleryPage = () => {
 };
 
 export default GalleryPage;
+
+
+  // let ans = []
+  // for(let i=0;i<images2.length;i++){
+  //   const img = new Image();
+  //   img.src = images2[i].src;
+  //   img.onload = () => {
+  //     ans.push({
+  //       src: images2[i].src,
+  //       width: img.width,
+  //       height: img.height
+  //     })
+  //   }
+  // }
+
+  // console.log(ans)
