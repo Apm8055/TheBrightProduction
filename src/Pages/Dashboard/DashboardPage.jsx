@@ -1,23 +1,19 @@
 
-
-
-
-
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth, signOut } from '../../firebase'; 
-import styles from './Dashboard.module.css';  
+import { auth, signOut } from '../../firebase';
+import styles from './Dashboard.module.css';
+
+
 const DashboardPage = ({ token }) => {
-    const [imageFile, setImageFile] = useState(null);
-    const [selectedCategory, setSelectedCategory] = useState('prewedding');
-    const [images, setImages] = useState({}); 
+    const [images, setImages] = useState({});
     const navigate = useNavigate();
 
     useEffect(() => {
         if (!token) {
             navigate('/login');
         } else {
-            fetchAllImages(); 
+            fetchAllImages();
         }
     }, [token, navigate]);
 
@@ -57,22 +53,17 @@ const DashboardPage = ({ token }) => {
     };
 
 
-    const handleFileChange = (e) => {
-        setImageFile(e.target.files[0]);
-    };
-
-
-    const handleCategoryChange = (e) => {
-        setSelectedCategory(e.target.value);
-    };
-
-   
     const handleUpload = async (e) => {
         e.preventDefault();
+        const Details = new FormData(e.target);
         const formData = new FormData();
-        formData.append('file', imageFile);
+        formData.append('file', Details.get('file'));
         formData.append('upload_preset', 'my_preset');
-        formData.append('folder', selectedCategory);
+        formData.append('folder', Details.get('selectedCategory'));
+
+        console.log(Details);
+        console.log(formData.get('folder'));
+
 
         try {
             const cloudinaryResponse = await fetch('https://api.cloudinary.com/v1_1/dtamfjqa4/image/upload', {
@@ -88,7 +79,8 @@ const DashboardPage = ({ token }) => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ url: imageUrl, category: selectedCategory }),
+                body: JSON.stringify({ src: imageUrl, category: Details.get('selectedCategory'), width: Details.get('width'), height: Details.get('height')}),
+            
             });
 
             alert('Image uploaded and URL saved to MongoDB');
@@ -99,7 +91,7 @@ const DashboardPage = ({ token }) => {
         }
     };
 
- 
+
     const handleDelete = async (imageId, cloudinaryId) => {
         try {
             await fetch(`https://enchanting-taiyaki-c89136.netlify.app/.netlify/functions/deleteImage`, {
@@ -117,6 +109,19 @@ const DashboardPage = ({ token }) => {
         }
     };
 
+    const submitCheck = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = {
+            "file": formData.get("file"),
+            "selectedCategory": formData.get("selectedCategory"),
+            "width": formData.get("width"),
+            "height": formData.get("height")
+        };
+        console.log("Form Data:", data);
+    };
+
+
     return (
         <div className={styles.dashboard}>
             <nav className={styles.navbar}>
@@ -124,20 +129,24 @@ const DashboardPage = ({ token }) => {
                 <button className={styles.logoutButton} onClick={handleLogout}>Logout</button>
             </nav>
 
-            
-            <form onSubmit={handleUpload} className={styles.form}>
-                <input type="file" onChange={handleFileChange} required className={styles.inputFile} />
-                <select value={selectedCategory} onChange={handleCategoryChange} className={styles.selectCategory}>
-                    <option value="prewedding">Prewedding</option>
+
+            <form onSubmit={submitCheck} className={styles.form}>
+                <input type="file" name='file' className={styles.inputFile} />
+                <select name="selectedCategory" className={styles.selectCategory} defaultValue="prewedding">
+                    <option value="prewedding" >Prewedding</option>
                     <option value="engagement">Engagement</option>
                     <option value="wedding">Wedding</option>
                     <option value="birthday">Birthday</option>
                     <option value="familyandbaby">Family and Baby</option>
                 </select>
+
+
+                <input name='width' id='width' type="number" className={styles.inputFile} placeholder="Width in px" />
+                <input name='height' id='height' type="number" className={styles.inputFile} placeholder="Height in px" />
                 <button type="submit" className={styles.uploadButton}>Upload Image</button>
             </form>
 
-         
+
             <div className={styles.imageGallery}>
                 {Object.keys(images).map((category) => (
                     <div key={category} className={styles.imageCategory}>
