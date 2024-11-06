@@ -17,7 +17,7 @@ exports.handler = async (event) => {
     }
 
     // Parse the incoming request body
-    const { url, category } = JSON.parse(event.body);
+    const { src, category, width, height } = JSON.parse(event.body);
 
     const uri = process.env.MONGO_URI; // Your MongoDB connection string
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -28,7 +28,7 @@ exports.handler = async (event) => {
         const collection = database.collection('images');
 
         // Insert the image URL and category into the collection
-        const result = await collection.insertOne({ url, category });
+        const result = await collection.insertOne({src, category,width,height });
 
         await client.close();
 

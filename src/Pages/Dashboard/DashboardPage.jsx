@@ -130,7 +130,7 @@ const DashboardPage = ({ token }) => {
             </nav>
 
 
-            <form onSubmit={submitCheck} className={styles.form}>
+            <form onSubmit={handleUpload} className={styles.form}>
                 <input type="file" name='file' className={styles.inputFile} />
                 <select name="selectedCategory" className={styles.selectCategory} defaultValue="prewedding">
                     <option value="prewedding" >Prewedding</option>
