@@ -7,6 +7,7 @@ import styles from './Dashboard.module.css';
 
 const DashboardPage = ({ token }) => {
     const [images, setImages] = useState({});
+    const [isUploading, setIsUploading] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -55,15 +56,22 @@ const DashboardPage = ({ token }) => {
 
     const handleUpload = async (e) => {
         e.preventDefault();
+        setIsUploading(true); // Start loading
+
         const Details = new FormData(e.target);
         const formData = new FormData();
         formData.append('file', Details.get('file'));
         formData.append('upload_preset', 'my_preset');
         formData.append('folder', Details.get('selectedCategory'));
 
-        console.log(Details);
-        console.log(formData.get('folder'));
-
+        const loadImage = (src) => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = src;
+                img.onload = () => resolve({ ImageWidth: img.width, ImageHeight: img.height });
+                img.onerror = reject;
+            });
+        };
 
         try {
             const cloudinaryResponse = await fetch('https://api.cloudinary.com/v1_1/dtamfjqa4/image/upload', {
@@ -74,20 +82,25 @@ const DashboardPage = ({ token }) => {
             const cloudinaryData = await cloudinaryResponse.json();
             const imageUrl = cloudinaryData.secure_url;
 
+            const { ImageWidth, ImageHeight } = await loadImage(imageUrl);
+            console.log({ src: imageUrl, category: Details.get('selectedCategory'), width: ImageWidth, height: ImageHeight });
+
             await fetch('https://enchanting-taiyaki-c89136.netlify.app/.netlify/functions/saveImage', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ src: imageUrl, category: Details.get('selectedCategory'), width: Details.get('width'), height: Details.get('height')}),
-            
+                body: JSON.stringify({ src: imageUrl, category: Details.get('selectedCategory'), width: ImageWidth, height: ImageHeight }),
             });
 
             alert('Image uploaded and URL saved to MongoDB');
             fetchAllImages();  // Refresh images after upload
+            e.target.reset(); // Clear form fields after upload
         } catch (error) {
             console.error('Error uploading image:', error);
             alert('Error uploading image');
+        } finally {
+            setIsUploading(false); // End loading
         }
     };
 
@@ -109,21 +122,14 @@ const DashboardPage = ({ token }) => {
         }
     };
 
-    const submitCheck = (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const data = {
-            "file": formData.get("file"),
-            "selectedCategory": formData.get("selectedCategory"),
-            "width": formData.get("width"),
-            "height": formData.get("height")
-        };
-        console.log("Form Data:", data);
-    };
-
-
     return (
         <div className={styles.dashboard}>
+            {/* Fullscreen Loader Overlay */}
+            {isUploading && (
+                <div className={styles.overlay}>
+                    <div className={styles.loader}>Uploading...</div>
+                </div>
+            )}
             <nav className={styles.navbar}>
                 <h1 className={styles.title}>Admin Dashboard</h1>
                 <button className={styles.logoutButton} onClick={handleLogout}>Logout</button>
@@ -131,19 +137,18 @@ const DashboardPage = ({ token }) => {
 
 
             <form onSubmit={handleUpload} className={styles.form}>
-                <input type="file" name='file' className={styles.inputFile} />
-                <select name="selectedCategory" className={styles.selectCategory} defaultValue="prewedding">
-                    <option value="prewedding" >Prewedding</option>
+                <input type="file" name="file" className={styles.inputFile} disabled={isUploading} required/>
+                <select name="selectedCategory" className={styles.selectCategory} defaultValue="prewedding" disabled={isUploading}>
+                    <option value="prewedding">Prewedding</option>
                     <option value="engagement">Engagement</option>
                     <option value="wedding">Wedding</option>
                     <option value="birthday">Birthday</option>
                     <option value="familyandbaby">Family and Baby</option>
                 </select>
 
-
-                <input name='width' id='width' type="number" className={styles.inputFile} placeholder="Width in px" />
-                <input name='height' id='height' type="number" className={styles.inputFile} placeholder="Height in px" />
-                <button type="submit" className={styles.uploadButton}>Upload Image</button>
+                <button type="submit" className={styles.uploadButton} disabled={isUploading}>
+                    Upload Image
+                </button>
             </form>
 
 
@@ -155,7 +160,7 @@ const DashboardPage = ({ token }) => {
                             {images[category].length > 0 ? (
                                 images[category].map((image) => (
                                     <div key={image._id} className={styles.imageContainer}>
-                                        <img src={image.url} alt={category} className={styles.image} />
+                                        <img src={image.src} alt={category} className={styles.image} />
                                         <button
                                             onClick={() => handleDelete(image._id, image.cloudinaryId)}
                                             className={styles.deleteButton}
