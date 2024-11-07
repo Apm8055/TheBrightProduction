@@ -9,47 +9,12 @@ import '../Pages.css';
 
 const images2 = [
     {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%201.jpg?updatedAt=1723875061821",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%202.jpg?updatedAt=1723875068814",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%203.jpg?updatedAt=1723875075058",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%204.jpg?updatedAt=1723875081371",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%205.jpg?updatedAt=1723875086633",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2013.jpg?updatedAt=1723875131428",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2014.jpg?updatedAt=1723875136762",
-        "width": 1440,
-        "height": 960
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2025.jpg?updatedAt=1723875196470",
+        "width": 960,
+        "height": 1440
     },
     {
         "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2018.jpg?updatedAt=1723875158297",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2027.jpg?updatedAt=1723875207212",
         "width": 1440,
         "height": 960
     },
@@ -59,62 +24,7 @@ const images2 = [
         "height": 960
     },
     {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2020.jpg?updatedAt=1723875168942",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2040.jpg?updatedAt=1723875274707",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2015.jpg?updatedAt=1723875142322",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2032.jpg?updatedAt=1723875232352",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2033.jpg?updatedAt=1723875237902",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2034.jpg?updatedAt=1723875242956",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2035.jpg?updatedAt=1723875248452",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2036.jpg?updatedAt=1723875253408",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2028.jpg?updatedAt=1723875212326",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2029.jpg?updatedAt=1723875217191",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2030.jpg?updatedAt=1723875222325",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2031.jpg?updatedAt=1723875227461",
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2013.jpg?updatedAt=1723875131428",
         "width": 1440,
         "height": 960
     },
@@ -124,52 +34,7 @@ const images2 = [
         "height": 960
     },
     {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2017.jpg?updatedAt=1723875152785",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%206.jpg?updatedAt=1723875092595",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%207.jpg?updatedAt=1723875098008",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%208.jpg?updatedAt=1723875104003",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%209.jpg?updatedAt=1723875109277",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2010.jpg?updatedAt=1723875114914",
-        "width": 960,
-        "height": 1440
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2011.jpg?updatedAt=1723875120656",
-        "width": 960,
-        "height": 1440
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2012.jpg?updatedAt=1723875126181",
-        "width": 1440,
-        "height": 960
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2021.jpg?updatedAt=1723875174961",
-        "width": 960,
-        "height": 1440
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2022.jpg?updatedAt=1723875180557",
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2026.jpg?updatedAt=1723875202070",
         "width": 960,
         "height": 1440
     },
@@ -179,27 +44,27 @@ const images2 = [
         "height": 1440
     },
     {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2032.jpg?updatedAt=1723875232352",
+        "width": 1440,
+        "height": 960
+    },
+    {
         "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2024.jpg?updatedAt=1723875191265",
         "width": 960,
         "height": 1440
     },
     {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2025.jpg?updatedAt=1723875196470",
-        "width": 960,
-        "height": 1440
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2017.jpg?updatedAt=1723875152785",
+        "width": 1440,
+        "height": 960
     },
     {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2026.jpg?updatedAt=1723875202070",
-        "width": 960,
-        "height": 1440
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2027.jpg?updatedAt=1723875207212",
+        "width": 1440,
+        "height": 960
     },
     {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2037.jpg?updatedAt=1723875258893",
-        "width": 960,
-        "height": 1440
-    },
-    {
-        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2038.jpg?updatedAt=1723875264223",
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2022.jpg?updatedAt=1723875180557",
         "width": 960,
         "height": 1440
     },
@@ -207,6 +72,126 @@ const images2 = [
         "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2039.jpg?updatedAt=1723875269543",
         "width": 960,
         "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2029.jpg?updatedAt=1723875217191",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2020.jpg?updatedAt=1723875168942",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2011.jpg?updatedAt=1723875120656",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2028.jpg?updatedAt=1723875212326",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2014.jpg?updatedAt=1723875136762",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2015.jpg?updatedAt=1723875142322",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2035.jpg?updatedAt=1723875248452",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2030.jpg?updatedAt=1723875222325",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2021.jpg?updatedAt=1723875174961",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%206.jpg?updatedAt=1723875092595",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2038.jpg?updatedAt=1723875264223",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2028.jpg?updatedAt=1723875212326",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2040.jpg?updatedAt=1723875274707",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2033.jpg?updatedAt=1723875237902",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%207.jpg?updatedAt=1723875098008",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2010.jpg?updatedAt=1723875114914",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2036.jpg?updatedAt=1723875253408",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%205.jpg?updatedAt=1723875086633",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%209.jpg?updatedAt=1723875109277",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%204.jpg?updatedAt=1723875081371",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2034.jpg?updatedAt=1723875242956",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2031.jpg?updatedAt=1723875227461",
+        "width": 1440,
+        "height": 960
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%2037.jpg?updatedAt=1723875258893",
+        "width": 960,
+        "height": 1440
+    },
+    {
+        "src": "https://ik.imagekit.io/apm2002/Photos/Wedding/Wed%203.jpg?updatedAt=1723875075058",
+        "width": 1440,
+        "height": 960
     }
 ];
 
@@ -230,7 +215,7 @@ const Wedding = () => {
                 );
                 const data = await response.json();
                 console.log("Fetched Data: ", data);
-                setImages((prevImages) => [...prevImages, ...data]);  // Store fetched images in the state
+                setImages(() => [...images2, ...data]);  // Store fetched images in the state
             } catch (error) {
                 console.error('Error fetching images:', error);
             }

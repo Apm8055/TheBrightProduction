@@ -7,7 +7,17 @@ import "../Pages.css";
 
 const images2 = [
   {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2026.jpg?updatedAt=1723875144514",
+    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2032.jpg?updatedAt=1723875144514",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2034.jpg?updatedAt=1723875144514",
+    "width": 960,
+    "height": 1440
+  },
+  {
+    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2028.jpg?updatedAt=1723875144514",
     "width": 1440,
     "height": 960
   },
@@ -17,9 +27,14 @@ const images2 = [
     "height": 960
   },
   {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2028.jpg?updatedAt=1723875144514",
+    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2033.jpg?updatedAt=1723875144514",
     "width": 1440,
     "height": 960
+  },
+  {
+    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2035.jpg?updatedAt=1723875144514",
+    "width": 960,
+    "height": 1440
   },
   {
     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2029.jpg?updatedAt=1723875144514",
@@ -32,29 +47,14 @@ const images2 = [
     "height": 960
   },
   {
+    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2026.jpg?updatedAt=1723875144514",
+    "width": 1440,
+    "height": 960
+  },
+  {
     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2031.jpg?updatedAt=1723875144514",
     "width": 1440,
     "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2032.jpg?updatedAt=1723875144514",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2033.jpg?updatedAt=1723875144514",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2034.jpg?updatedAt=1723875144514",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2035.jpg?updatedAt=1723875144514",
-    "width": 960,
-    "height": 1440
   }
 ];
 
@@ -79,7 +79,7 @@ const Birthday = () => {
         );
         const data = await response.json();
         console.log("Fetched Data: ", data);
-        setImages((prevImages) => [...prevImages, ...data]); // Store fetched images in the state
+        setImages(() => [...images2, ...data]); // Store fetched images in the state
       } catch (error) {
         console.error('Error fetching images:', error);
       }

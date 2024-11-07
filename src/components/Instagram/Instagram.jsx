@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import ScrollReveal from 'scrollreveal';
+import React from 'react';
 import "./Instagram.css";
 
 const Instagram = () => {
