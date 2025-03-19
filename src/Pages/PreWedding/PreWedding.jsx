@@ -192,8 +192,9 @@ const PreWedding = () => {
           'https://enchanting-taiyaki-c89136.netlify.app/.netlify/functions/getImages?category=prewedding'
         );
         const data = await response.json();
+        data.reverse();
         console.log("Fetched Data: ", data);
-        setImages(() => [...images2, ...data]);  // Store fetched images in the state
+        setImages(() => [...data, ...images2]);  // Store fetched images in the state
       } catch (error) {
         console.error('Error fetching images:', error);
       }
