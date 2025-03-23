@@ -44,3 +44,4 @@ jobs:
           server: 93.127.208.39
           username: u449618480.hotpink-chough-392526.hostingersite.com
           password: ${{ secrets.ftp_password }}
+          local-dir: dist/
