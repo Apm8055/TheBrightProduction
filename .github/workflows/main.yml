@@ -41,6 +41,6 @@ jobs:
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ftp://93.127.208.39
+          server: 93.127.208.39
           username: u449618480.hotpink-chough-392526.hostingersite.com
           password: ${{ secrets.ftp_password }}
