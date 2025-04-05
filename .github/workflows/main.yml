@@ -38,10 +38,16 @@ jobs:
           name: dist
           path: dist
 
+      - name: Prepare deploy folder
+        run: |
+            mkdir deploy
+            cp -r dist/* deploy/
+            cp -r backend/ deploy/
+
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: 93.127.208.39
-          username: u449618480.hotpink-chough-392526.hostingersite.com
-          password: ${{ secrets.ftp_password }}
-          local-dir: dist/
+          username: u449618480
+          password: ${{ secrets.ftp_password_main }}
+          local-dir: deploy/
