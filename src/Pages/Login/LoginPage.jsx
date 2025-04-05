@@ -25,26 +25,7 @@ const LoginPage = ({ setToken }) => {
     };
 
     return (
-        // <form onSubmit={handleSubmit}>
-        //     <h2>Admin Login</h2>
-        //     <input
-        //         type="email"
-        //         value={email}
-        //         onChange={(e) => setEmail(e.target.value)}
-        //         placeholder="Email"
-        //         required
-        //     />
-        //     <input
-        //         type="password"
-        //         value={password}
-        //         onChange={(e) => setPassword(e.target.value)}
-        //         placeholder="Password"
-        //         required
-        //     />
-        //     <button type="submit">Login</button>
-        // </form>
-
-
+        
         <div className={styles.containerr}>
             <div className={styles.wrapper}>
 
@@ -88,35 +69,7 @@ const LoginPage = ({ setToken }) => {
             </div>
         </div>
 
-
-
-
     );
 };
 
 export default LoginPage;
-
-
-
-
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//     apiKey: "AIzaSyB8ILo38WtgHi6zPnd9wBf2uJS4aFkkWzQ",
-//     authDomain: "studio-441a5.firebaseapp.com",
-//     projectId: "studio-441a5",
-//     storageBucket: "studio-441a5.appspot.com",
-//     messagingSenderId: "655257173559",
-//     appId: "1:655257173559:web:46ad4c802cb9f4ff4209b2",
-//     measurementId: "G-5JFWNK7XVL"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);

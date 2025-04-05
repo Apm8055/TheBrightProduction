@@ -1,26 +1,18 @@
 <?php
-header('Content-Type: application/json');
 require 'dbConnection.php';
 
-// Get POST data
-$data = json_decode(file_get_contents("php://input"), true);
+$serial_no = 1;
+$email = "thebrightproduction@gmail.com";
+$password = "ShivStudio@1234";
 
-$sno = 1;
-$value = 42;
-
-if (!is_numeric($sno) || !is_numeric($value)) {
-    http_response_code(400);
-    echo json_encode(["error" => "Both sno and value must be integers"]);
-    exit;
-}
-
-$stmt = $conn->prepare("INSERT INTO Test (SerialNo, Value) VALUES (?, ?)");
-$stmt->bind_param("ii", $sno, $value); // both are integers
+// Use prepared statement to avoid SQL injection
+$stmt = $conn->prepare("INSERT INTO user_details (serial_no, email, password) VALUES (?, ?, ?)");
+$stmt->bind_param("iss", $serial_no, $email, $password);
 
 if ($stmt->execute()) {
-    echo json_encode(["message" => "Data inserted successfully"]);
+    echo "Record inserted successfully.";
 } else {
-    echo json_encode(["error" => "Insert failed: " . $conn->error]);
+    echo "Error: " . $stmt->error;
 }
 
 $stmt->close();

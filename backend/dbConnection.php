@@ -1,7 +1,7 @@
 <?php
 $host = '193.203.184.96';
-$dbname = 'u449618480_ShivStudioTest';
-$username = 'u449618480_Shiv'; // 🔁 Replace this
+$dbname = 'u449618480_ShivStudioMain';
+$username = 'u449618480_ShivPratap'; // 🔁 Replace this
 $password = 'Akhand@8055'; // 🔁 Replace this
 
 // Create connection
