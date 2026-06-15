@@ -12,10 +12,28 @@ const LoginPage = ({ setToken }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            const token = await userCredential.user.getIdToken(); // Get JWT from Firebase
-            localStorage.setItem('token', token);  // Store token in localStorage
-            setToken(token);  // Set token state
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/login.php`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            });
+            
+            const data = await response.json();
+            
+            if (!response.ok) {
+                throw new Error(data.error || "Login failed");
+            }
+            
+            // Store JWT from your PHP backend
+            localStorage.setItem("token", data.token);
+            
+            console.log("JWT:", data.token); // Store token in localStorage
+            setToken(data.token);  // Set token state
             setError('');  // Clear any previous error
             navigate('/dashboard');  // Redirect to dashboard using useNavigate
         } catch (error) {
