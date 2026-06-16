@@ -2,11 +2,6 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-// $host = "srv1493.hstgr.io";
-// $dbname = "u449618480_ShivStudioMain";
-// $username = "u449618480_ShivPratap";
-// $password = "Akhand8055";
-
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 

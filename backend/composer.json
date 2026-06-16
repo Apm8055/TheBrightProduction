@@ -1,6 +1,7 @@
 {
     "require": {
         "firebase/php-jwt": "7.0",
-        "vlucas/phpdotenv": "*"
+        "vlucas/phpdotenv": "*",
+        "cloudinary/cloudinary_php": "^3.1"
     }
 }
