@@ -4,179 +4,180 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import "react-photo-album/rows.css";
 import "../Pages.css";
+import { Section } from '../Section';
 
-const images2 = [
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2040.jpg?updatedAt=1723875098527",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2024.jpg?updatedAt=1723875098493",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2042.jpg?updatedAt=1723875098037",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2036.jpg?updatedAt=1723875098596",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2038.jpg?updatedAt=1723875098498",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2027.jpg?updatedAt=1723875098457",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2025.jpg?updatedAt=1723875098384",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2022.jpg?updatedAt=1723875098370",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2013.jpg?updatedAt=1723875098418",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2016.jpg?updatedAt=1723875098556",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2029.jpg?updatedAt=1723875098553",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2039.jpg?updatedAt=1723875098125",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2017.jpg?updatedAt=1723875098519",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2010.jpg?updatedAt=1723875098603",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2020.jpg?updatedAt=1723875098261",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2026.jpg?updatedAt=1723875098319",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2033.jpg?updatedAt=1723875098098",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2041.jpg?updatedAt=1723875098045",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2035.jpg?updatedAt=1723875098564",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2029.jpg?updatedAt=1723875098553",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2034.jpg?updatedAt=1723875098076",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2023.jpg?updatedAt=1723875098112",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2018.jpg?updatedAt=1723875098414",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2014.jpg?updatedAt=1723875098369",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2021.jpg?updatedAt=1723875098326",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2028.jpg?updatedAt=1723875098425",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2031.jpg?updatedAt=1723875098546",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2030.jpg?updatedAt=1723875098258",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2019.jpg?updatedAt=1723875098048",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2032.jpg?updatedAt=1723875098405",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2028.jpg?updatedAt=1723875098425",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2022.jpg?updatedAt=1723875098370",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2037.jpg?updatedAt=1723875098511",
-    "width": 1440,
-    "height": 960
-  }
-];
+// const images2 = [
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2040.jpg?updatedAt=1723875098527",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2024.jpg?updatedAt=1723875098493",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2042.jpg?updatedAt=1723875098037",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2036.jpg?updatedAt=1723875098596",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2038.jpg?updatedAt=1723875098498",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2027.jpg?updatedAt=1723875098457",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2025.jpg?updatedAt=1723875098384",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2022.jpg?updatedAt=1723875098370",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2013.jpg?updatedAt=1723875098418",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2016.jpg?updatedAt=1723875098556",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2029.jpg?updatedAt=1723875098553",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2039.jpg?updatedAt=1723875098125",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2017.jpg?updatedAt=1723875098519",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2010.jpg?updatedAt=1723875098603",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2020.jpg?updatedAt=1723875098261",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2026.jpg?updatedAt=1723875098319",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2033.jpg?updatedAt=1723875098098",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2041.jpg?updatedAt=1723875098045",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2035.jpg?updatedAt=1723875098564",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2029.jpg?updatedAt=1723875098553",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2034.jpg?updatedAt=1723875098076",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2023.jpg?updatedAt=1723875098112",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2018.jpg?updatedAt=1723875098414",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2014.jpg?updatedAt=1723875098369",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2021.jpg?updatedAt=1723875098326",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2028.jpg?updatedAt=1723875098425",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2031.jpg?updatedAt=1723875098546",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2030.jpg?updatedAt=1723875098258",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2019.jpg?updatedAt=1723875098048",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2032.jpg?updatedAt=1723875098405",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2028.jpg?updatedAt=1723875098425",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2022.jpg?updatedAt=1723875098370",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Prewedding/Pre%2037.jpg?updatedAt=1723875098511",
+//     "width": 1440,
+//     "height": 960
+//   }
+// ];
 
 
 const PreWedding = () => {
 
-  const [images, setImages] = useState(images2);
+  const [images, setImages] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
@@ -188,13 +189,18 @@ const PreWedding = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch(
-          'https://enchanting-taiyaki-c89136.netlify.app/.netlify/functions/getImages?category=prewedding'
-        );
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/getImages.php?section=${Section.PREWEDDING}`);
         const data = await response.json();
         data.reverse();
         console.log("Fetched Data: ", data);
-        setImages(() => [...data, ...images2]);  // Store fetched images in the state
+        const photos = data.map(img => ({
+          src: img.cloudinary_url,
+          width: img.width,
+          height: img.height,
+          id: img.id
+        }));
+        
+        setImages(photos);
       } catch (error) {
         console.error('Error fetching images:', error);
       }
@@ -224,7 +230,7 @@ const PreWedding = () => {
 
       {isOpen && (
         <Lightbox
-          slides={images.map((img) => ({ src: img.src }))}
+          slides={images.map((img) => ({ src: img.cloudinary_url }))}
           index={photoIndex}
           open={isOpen}
           close={() => setIsOpen(false)}

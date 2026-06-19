@@ -46,8 +46,10 @@ $stmt = $conn->prepare(
     "INSERT INTO Image (
         cloudinary_public_id,
         cloudinary_url,
-        section
-    ) VALUES (?, ?, ?)"
+        section,
+        width,
+        height
+    ) VALUES (?, ?, ?, ?, ?)"
 );
 
 foreach ($_FILES['images']['tmp_name'] as $index => $tmpFile) {
@@ -62,12 +64,15 @@ foreach ($_FILES['images']['tmp_name'] as $index => $tmpFile) {
 
         $publicId = $result['public_id'];
         $url = $result['secure_url'];
+        [$width, $height] = getimagesize($tmpFile);
 
         $stmt->bind_param(
-            "sss",
+            "sssii",
             $publicId,
             $url,
-            $section
+            $section,
+            $width,
+            $height
         );
 
         $stmt->execute();
@@ -76,7 +81,9 @@ foreach ($_FILES['images']['tmp_name'] as $index => $tmpFile) {
             'id' => $conn->insert_id,
             'cloudinary_public_id' => $publicId,
             'cloudinary_url' => $url,
-            'section' => $section
+            'section' => $section,
+            'width' => $width,
+            'height' => $height
         ];
 
     } catch (Exception $e) {

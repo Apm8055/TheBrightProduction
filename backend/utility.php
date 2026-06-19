@@ -10,6 +10,8 @@ function sendCorsHeaders(): void
     $allowedOrigins = [
         'http://localhost:5173',
         'http://127.0.0.1:5173',
+        'https://thebrightproductiontbp.com/backend',
+        'https://thebrightproductiontbp.com'
     ];
 
     $origin = $_SERVER['HTTP_ORIGIN'] ?? '';

@@ -4,65 +4,66 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import "react-photo-album/rows.css";
 import "../Pages.css";
+import { Section } from '../Section';
 
-const images2 = [
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2032.jpg?updatedAt=1723875144514",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2034.jpg?updatedAt=1723875144514",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2028.jpg?updatedAt=1723875144514",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2027.jpg?updatedAt=1723875144514",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2033.jpg?updatedAt=1723875144514",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2035.jpg?updatedAt=1723875144514",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2029.jpg?updatedAt=1723875144514",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2030.jpg?updatedAt=1723875144514",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2026.jpg?updatedAt=1723875144514",
-    "width": 1440,
-    "height": 960
-  },
-  {
-    "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2031.jpg?updatedAt=1723875144514",
-    "width": 1440,
-    "height": 960
-  }
-];
+// const images2 = [
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2032.jpg?updatedAt=1723875144514",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2034.jpg?updatedAt=1723875144514",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2028.jpg?updatedAt=1723875144514",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2027.jpg?updatedAt=1723875144514",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2033.jpg?updatedAt=1723875144514",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2035.jpg?updatedAt=1723875144514",
+//     "width": 960,
+//     "height": 1440
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2029.jpg?updatedAt=1723875144514",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2030.jpg?updatedAt=1723875144514",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2026.jpg?updatedAt=1723875144514",
+//     "width": 1440,
+//     "height": 960
+//   },
+//   {
+//     "src": "https://ik.imagekit.io/apm2002/Photos/Birthday/Birthday%2031.jpg?updatedAt=1723875144514",
+//     "width": 1440,
+//     "height": 960
+//   }
+// ];
 
 
 const Birthday = () => {
 
 
-  const [images, setImages] = useState(images2);
+  const [images, setImages] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
@@ -74,13 +75,18 @@ const Birthday = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch(
-          'https://enchanting-taiyaki-c89136.netlify.app/.netlify/functions/getImages?category=birthday'
-        );
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/getImages.php?section=${Section.BIRTHDAY}`);
         const data = await response.json();
         data.reverse();
         console.log("Fetched Data: ", data);
-        setImages(() => [...data, ...images2]); // Store fetched images in the state
+        const photos = data.map(img => ({
+          src: img.cloudinary_url,
+          width: img.width,
+          height: img.height,
+          id: img.id
+        }));
+        
+        setImages(photos);
       } catch (error) {
         console.error('Error fetching images:', error);
       }
@@ -111,7 +117,7 @@ const Birthday = () => {
 
       {isOpen && (
         <Lightbox
-          slides={images.map((img) => ({ src: img.src }))}
+          slides={images.map((img) => ({ src: img.cloudinary_url }))}
           index={photoIndex}
           open={isOpen}
           close={() => setIsOpen(false)}

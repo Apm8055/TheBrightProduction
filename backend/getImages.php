@@ -26,6 +26,8 @@ $stmt = $conn->prepare(
         id,
         cloudinary_url,
         section,
+        width,
+        height,
         created_at
      FROM Image
      WHERE section = ?
@@ -54,6 +56,8 @@ while ($row = $result->fetch_assoc()) {
         'id' => (int) $row['id'],
         'cloudinary_url' => $row['cloudinary_url'],
         'section' => $row['section'],
+        'width' => (int) $row['width'],
+        'height' => (int) $row['height'],
         'created_at' => $row['created_at']
     ];
 }

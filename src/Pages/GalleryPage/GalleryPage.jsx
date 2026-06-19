@@ -59,7 +59,7 @@ const GalleryPage = () => {
 
       {isOpen && (
         <Lightbox
-          slides={images.map((img) => ({ src: img.src }))}
+          slides={images.map((img) => ({ src: img.cloudinary_url }))}
           index={photoIndex}
           open={isOpen}
           close={() => setIsOpen(false)}

@@ -7,19 +7,25 @@ class Image
     private string $cloudinaryUrl;
     private string $createdAt;
     private string $section;
+    private int $width;
+    private int $height;
 
     public function __construct(
         int $id,
         string $cloudinaryPublicId,
         string $cloudinaryUrl,
         string $createdAt,
-        string $section
+        string $section,
+        int $width,
+        int $height
     ) {
         $this->id = $id;
         $this->cloudinaryPublicId = $cloudinaryPublicId;
         $this->cloudinaryUrl = $cloudinaryUrl;
         $this->createdAt = $createdAt;
         $this->section = $section;
+        $this->width = $width;
+        $this->height = $height;
     }
 
     public function getId(): int
@@ -45,5 +51,15 @@ class Image
     public function getSection(): string
     {
         return $this->section;
+    }
+
+    public function getWidth(): int
+    {
+        return $this->width;
+    }
+
+    public function getHeight(): int
+    {
+        return $this->height;
     }
 }

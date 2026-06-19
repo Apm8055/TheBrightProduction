@@ -4,39 +4,40 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import "react-photo-album/rows.css";
 import "../Pages.css";
+import { Section } from '../Section';
 
-const images2 = [
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2018.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%205.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2023.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%203.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%204.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%209.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2019.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2010.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2014.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%206.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%208.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2015.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2016.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2011.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2020.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2022.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2017.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%201.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%207.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2021.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2013.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2024.jpg?updatedAt=1723875098921", "width": 5760, "height": 3840},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%202.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2012.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
-    {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2025.jpg?updatedAt=1723875098921", "width": 1440, "height": 960}
-];
+// const images2 = [
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2018.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%205.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2023.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%203.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%204.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%209.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2019.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2010.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2014.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%206.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%208.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2015.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2016.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2011.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2020.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2022.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2017.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%201.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%207.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2021.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2013.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2024.jpg?updatedAt=1723875098921", "width": 5760, "height": 3840},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%202.jpg?updatedAt=1723875098921", "width": 1440, "height": 960},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2012.jpg?updatedAt=1723875098921", "width": 960, "height": 1440},
+//     {"src": "https://ik.imagekit.io/apm2002/Photos/Family%20&%20Baby/Birthday%2025.jpg?updatedAt=1723875098921", "width": 1440, "height": 960}
+// ];
 
 
 const Baby = () => {
 
-    const [images, setImages] = useState(images2);
+    const [images, setImages] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
 
@@ -48,13 +49,18 @@ const Baby = () => {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const response = await fetch(
-                    'https://enchanting-taiyaki-c89136.netlify.app/.netlify/functions/getImages?category=FamilynBaby'
-                );
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/getImages.php?section=${Section.FAMILY_AND_BABY}`);
                 const data = await response.json();
                 data.reverse();
                 console.log("Fetched Data: ", data);
-                setImages(() => [...data, ...images2]);   // Store fetched images in the state
+                const photos = data.map(img => ({
+                    src: img.cloudinary_url,
+                    width: img.width,
+                    height: img.height,
+                    id: img.id
+                }));
+
+                setImages(photos);
             } catch (error) {
                 console.error('Error fetching images:', error);
             }
@@ -82,7 +88,7 @@ const Baby = () => {
                 />
                 {isOpen && (
                     <Lightbox
-                        slides={images.map((img) => ({ src: img.src }))}
+                        slides={images.map((img) => ({ src: img.cloudinary_url }))}
                         index={photoIndex}
                         open={isOpen}
                         close={() => setIsOpen(false)}
