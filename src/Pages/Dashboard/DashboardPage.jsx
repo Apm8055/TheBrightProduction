@@ -40,7 +40,9 @@ const DashboardPage = ({ token }) => {
                 throw new Error('Failed to fetch images');
             }
     
-            return await response.json();
+            const data = await response.json();
+    
+            return data.sort((a, b) => b.id - a.id);
     
         } catch (error) {
             console.error(

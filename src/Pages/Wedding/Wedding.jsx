@@ -214,12 +214,14 @@ const Wedding = () => {
                 const data = await response.json();
                 data.reverse();
                 console.log("Fetched Data: ", data);
-                const photos = data.map(img => ({
-                    src: img.cloudinary_url,
-                    width: img.width,
-                    height: img.height,
-                    id: img.id
-                }));
+                const photos = data
+                    .sort((a, b) => b.id - a.id) // Descending order
+                    .map(img => ({
+                        src: img.cloudinary_url,
+                        width: img.width,
+                        height: img.height,
+                        id: img.id
+                    }));
 
                 setImages(photos);
             } catch (error) {
@@ -250,7 +252,7 @@ const Wedding = () => {
 
             {isOpen && (
                 <Lightbox
-                    slides={images.map((img) => ({ src: img.cloudinary_url }))}
+                    slides={images.map((img) => ({ src: img.src }))}
                     index={photoIndex}
                     open={isOpen}
                     close={() => setIsOpen(false)}
