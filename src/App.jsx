@@ -1,20 +1,20 @@
-
-import Home from './components/Home/Home';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginPage from './Pages/Login/LoginPage';
-import DashboardPage from './Pages/Dashboard/DashboardPage';
-import Baby from './Pages/Baby/Baby';
-import Birthday from './Pages/Birthday/Birthday';
-import PreWedding from './Pages/PreWedding/PreWedding';
-import Wedding from './Pages/Wedding/Wedding';
-import EngagementGallery from './Pages/Engagement/EngagementGallery';
-import VideoPage from './Pages/Video/VideoPage';
-import { useState } from 'react';
-import './App.css';
-import GalleryPage from './Pages/GalleryPage/GalleryPage';
+import Home from "./components/Home/Home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LoginPage from "./Pages/Login/LoginPage";
+import DashboardPage from "./Pages/Dashboard/DashboardPage";
+import Baby from "./Pages/Baby/Baby";
+import Birthday from "./Pages/Birthday/Birthday";
+import PreWedding from "./Pages/PreWedding/PreWedding";
+import Wedding from "./Pages/Wedding/Wedding";
+import EngagementGallery from "./Pages/Engagement/EngagementGallery";
+import VideoPage from "./Pages/Video/VideoPage";
+import { useState } from "react";
+import "./App.css";
+import GalleryPage from "./Pages/GalleryPage/GalleryPage";
+import FloatingContact from "./components/FloatingContact/FloatingContact";
 
 function App() {
-  const [token, setToken] = useState(localStorage.getItem('token') || null);
+  const [token, setToken] = useState(localStorage.getItem("token") || null);
 
   return (
     <Router>
@@ -27,9 +27,10 @@ function App() {
         <Route path="/prewedding" element={<PreWedding />} />
         <Route path="/wedding" element={<Wedding />} />
         <Route path="/engagement" element={<EngagementGallery />} />
-        <Route path="/videos" element={<VideoPage/>} />
-        <Route path="/gallery" element={<GalleryPage/>} />
+        <Route path="/videos" element={<VideoPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
+      <FloatingContact />
     </Router>
   );
 }

@@ -1,0 +1,117 @@
+.floating-contact-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-options {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeInScale 0.4s ease;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.contact-option {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 28px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: none;
+  background: var(--option-color);
+  position: relative;
+}
+
+.contact-option i {
+  font-size: 28px;
+  transition: transform 0.3s ease;
+}
+
+.contact-option:hover {
+  transform: scale(1.15) translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.contact-option:hover i {
+  transform: scale(1.15) rotate(10deg);
+}
+
+.option-label {
+  display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .floating-contact-container {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .contact-option {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+
+  .contact-option i {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-contact-container {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .contact-option {
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .contact-option i {
+    font-size: 22px;
+  }
+
+  .contact-options {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-option {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .contact-option i {
+    font-size: 20px;
+  }
+}
