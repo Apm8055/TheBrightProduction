@@ -6,7 +6,7 @@ const FloatingContact = () => {
     {
       id: "whatsapp",
       icon: "ri-whatsapp-fill",
-      link: "https://wa.me/919335928986?text=Hi,%20Let's%20connect%20and%20discuss",
+      link: "https://wa.me/919335928986?text=Hi,%20I%20want%20to%20book%20a%20Photoshoot.",
       label: "WhatsApp",
       color: "#25D366",
     },

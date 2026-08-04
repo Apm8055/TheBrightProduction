@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="footer__socials">
         <a href="https://youtube.com/@thebrightproduction2112?si=9lnPcIfHwD_MmYsl" target="_blank"><i className="ri-youtube-fill" /></a>
         <a href="https://www.instagram.com/thebrightproduction.tbp/" target="_blank"><i className="ri-instagram-fill" /></a>
-        <a href="https://wa.me/919335928986?text=Hi,%20Let's%20connect%20and%20discuss" target="_blank"><i className="ri-whatsapp-fill" /></a>
+        <a href="https://wa.me/919335928986?text=Hi,%20I%20want%20to%20book%20a%20Photoshoot." target="_blank"><i className="ri-whatsapp-fill" /></a>
         <a href="mailto:thebrightproductiontbp@gmail.com"><i className="ri-mail-fill" /></a>
         <a href="tel:+919335928986" target="_blank"><i className="ri-phone-fill" /></a>
       </div>
